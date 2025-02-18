@@ -1,0 +1,286 @@
+/*Your Code Here*/
+/* PLEASE DO NOT REMOVE MY COMMENTS.  THEY HELP US HELP YOU DEBUG. */
+
+/* Step 1: Write selector/rule property to add an underline when
+links in the navigation are in the hover or focus state.*/
+nav a:hover,
+nav a:focus {
+  text-decoration: underline; /* Add underline to links */
+}
+
+
+/* Step 2a: Write selector/rule property to position the default position for the skip class element*/
+.skip {
+     position: absolute;  /* Position it absolutely relative to its nearest positioned ancestor */
+     width: 1px;          /* Minimal space */
+     height: 1px;         
+     overflow: hidden;    /* Hide any overflowing content */
+   }
+
+/* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
+.skip a:focus {
+     position: absolute;  /* Ensure it remains positioned relatively in context */
+     top: 10px;           /* Adjust as needed to bring it into view */
+     left: 10px;          /* Adjust as needed to bring it into view */
+     width: auto;         /* Allow it to take natural width */
+     height: auto;        /* Allow it to take natural height */
+     overflow: visible;   /* Ensure content is visible */
+     padding: 10px;       /* Add some padding for appearance and click area */
+     background-color: #fff;  /* Optional: Add a background for contrast */
+     border: 1px solid #ccc;  /* Optional: Add a border for visibility */
+     z-index: 1000;       /* Optional: Ensure it appears above other elements */
+   }
+
+/* Step 3: Write selector/rule property to style all elements when in focus*/
+*:focus {
+     outline: 2px solid;  /* Add a solid outline */
+     outline-offset: 2px;         /* Add space between the element and the outline */
+   }
+   
+
+
+/* Step 4: Write selector/rule property to style the container */
+.container {
+     max-width: 1200px;          /* Restrict the container's maximum width */
+     margin: 0 auto;             /* Center the container horizontally */
+     padding: 20px;              /* Add padding for space within the container */
+     background-color: #f9f9f9;  /* Set a light background color */
+   }
+
+/* Step 5: Write selector/rule property to add the background image to the 
+first div in the grid  and place it in the grid. */
+.grid-container {
+     display: grid; /* Enable grid layout */
+     grid-template-columns: repeat(3, 1fr); /* Example for three equal columns */
+     grid-template-rows: auto; /* Rows adjust based on content */
+     gap: 10px; /* Add spacing between grid items */
+   }
+   
+   .grid-container .grid-item:first-child {
+     background-image: url('/images/about.jpg'); /* Specify your background image path */
+     background-size: cover; /* Ensure the image covers the entire div */
+     background-position: center; /* Center the image within the div */
+     grid-column: span 1; /* Adjust based on how many columns it should span */
+     grid-row: span 1; /* Adjust based on how many rows it should span */
+     /* Additional styling as needed */
+   }
+
+
+/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+ four rows in the grid. */
+
+      /*This will be a lot of rules.... but be strategic and combine seletors*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Example grid with 3 equal columns */
+  grid-column-gap: 10px; /* Space between columns */
+  grid-row-gap: 10px; /* Space between rows */
+}
+
+.grid-item {
+  background-color: #e0e0e0; /* Default background color for all items */
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-item:first-child {
+  background-image: url('path/to/your/image.jpg');
+  background-size: cover;
+  background-position: center;
+  grid-column: span 3; /* First item spans across all columns */
+}
+
+.grid-container .grid-item:nth-child(2) { 
+  grid-column: span 1; /* Second item in the first column */
+  grid-row: span 1; /* Occupies one row */
+}
+
+.grid-container .grid-item:nth-child(3) { 
+  grid-column: span 1;  /* Third item in the second column */
+  grid-row: span 1; 
+}
+
+.grid-container .grid-item:nth-child(4) { 
+  grid-column: span 1; /* Fourth item in the third column */
+  grid-row: span 1; 
+}
+
+.grid-container .grid-item:nth-child(5) { 
+  grid-column: span 3;  /* Fifth item spans all columns */
+  grid-row: span 1; 
+}
+
+ /* Step 8: Write the selector/rule property to style the .text-block class. */
+ .text-block {
+     padding: 20px;             /* Add padding for space inside the block */
+     background-color: #f5f5f5; /* Light background color for contrast */
+     border-radius: 5px;        /* Rounds the corners for a softer look */
+     color: #333;               /* Text color for readability * /* Set a clear, readable font */
+     line-height: 1.6;          /* Improve readability with line spacing */
+     margin-bottom: 20px;       /* Space between text blocks */
+   }
+   
+   .text-block h2 {
+     font-size: 35px;
+     display: flex; 
+     align-items: center;       /* Distinct size for headings */
+     margin-bottom: 10px;      /* Space between heading and content */
+                /* Accent color for headings */
+   }
+   
+   .text-block p {
+     margin-bottom: 10px;      /* Consistent spacing between paragraphs */
+   }
+
+/* Add your media query here */
+body {
+     font-size: 18px;
+     line-height: 1.15;
+   }
+   
+   header {
+     width: 80%;
+     margin: 0 auto;
+     text-align: center;
+   }
+   
+   /* Media query for devices with a max width of 768px (common tablet size) */
+   @media (max-width: 768px) {
+     header {
+       width: 100%; /* Make header full width on smaller screens */
+       padding: 10px; /* Add padding for breathing room */
+     }
+   
+     body {
+       font-size: 16px; /* Slightly smaller text for smaller screens */
+     }
+   
+     nav {
+       text-align: center; /* Center the navigation links */
+       padding: 15px 0; /* Adjust padding */
+     }
+   
+     nav li {
+       display: block; /* Stack nav items vertically for smaller screens */
+       margin-bottom: 10px; /* Add spacing between stacked items */
+     }
+   
+     /* Ensure .text-block adapts */
+     .text-block {
+       padding: 20px; /* Reduce padding */
+       border: 5px solid black; /* Adjust border size */
+     }
+   }
+   
+
+  /* Step 9: Write the selector/rule property to style the nav element */
+/* Step 9: Style the nav element */
+nav {
+     background-color: #ddd;      /* Light gray background color */
+     padding: 25px 0;            /* Vertical padding for spacing */
+     text-align: left;           /* Align text to the left */
+     position: sticky;           /* Stick to the top during scroll */
+     top: 0;                     /* Align it to the top of the page/screen */
+     z-index: 1000;              /* Ensure it sits atop other content */
+   }
+   
+   nav ul {
+     list-style: none;           /* Remove the default list styling */
+     padding: 0;                 /* Remove default padding */
+     margin: 0;                  /* Remove default margin */
+   }
+   
+   nav li {
+     display: inline-block;      /* Display list items inline */
+     margin-right: 20px;         /* Space between menu items */
+   }
+   
+   nav a {
+     color: black;               /* Link text color */
+     font-weight: bold;          /* Bold link text for emphasis */
+     text-decoration: none;      /* Remove underline from links */
+     transition: color 0.3s ease; /* Smooth transition for visual effects */
+   }
+   
+   nav a:hover,
+   nav a:focus {            /* Change color on hover/focus for interaction */
+     text-decoration: underline; /* Underline for interaction feedback */
+   }
+ 
+  /* Step 10: Write the selector/rule property to update the .container class */
+  .container {
+     max-width: 1200px;            /* Set a maximum width to contain the content */
+     width: 100%;                  /* Allow the width to scale with the screen */
+     margin: 0 auto;               /* Center the container horizontally */
+     padding: 20px;                /* Add padding inside the container */
+     background-color: #ffffff;    /* Set background color */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+     border-radius: 8px;           /* Optional: rounded corners */
+   }
+   
+   /* Optionally, add media queries for responsiveness */
+   @media (max-width: 768px) {
+     .container {
+       padding: 10px;              /* Adjust padding for smaller screens */
+     }
+   }
+  /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+  .grid-container {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
+     grid-gap: 20px;                       /* Gap between grid items */
+   }
+   
+   .grid-item {
+     background-color: #f1f1f1; /* Default background for all items */
+     padding: 20px;
+     text-align: center;
+   }
+   
+   /* Steps 11 and 12: Update grid-column property for specific children */
+   
+   /* Example: Make the first item span all 3 columns */
+   .grid-item:first-child {
+     grid-column: span 3;
+   }
+   
+   /* Example: Make the second item span 2 columns */
+   .grid-item:nth-child(2) {
+     grid-column: span 2;
+   }
+   
+   /* If you need a specific starting column, you can do it like this */
+   /* The third item starts at column 2 and spans 2 columns */
+   .grid-item:nth-child(3) {
+     grid-column: 2 / span 2;
+   }
+
+
+ /* Step 13:Write the selector/rule property to update the .text-block class */
+ .text-block {
+     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better readability */
+     border: 2px solid #ccc;                     /* Lighter border color for a softer look */
+     padding: 25px;                              /* Comfortable inner spacing */
+     border-radius: 5px;                         /* Rounded corners for a modern feel */
+     color: #333;                                /* Text color for readability */
+     font-family: 'Helvetica Neue', Arial, sans-serif; /* Consistent and modern font */
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Subtle shadow for depth */
+     margin: 20px 0;                             /* Vertical spacing between text blocks */
+     transition: transform 0.3s ease;            /* Smooth transition effect */
+   }
+   
+   .text-block h2 {
+     font-size: 28px;                            /* Distinct size for subheadings */
+     margin-top: 0;                              /* Remove default top margin */
+     color: #0056b3;                             /* Accent color for headings */
+   }
+   
+   .text-block p {
+     margin-bottom: 15px;                        /* Spacing between paragraphs */
+     line-height: 1.6;                           /* Improve readability with line spacing */
+   }
+   
+   .text-block:hover {
+     transform: translateY(-5px);                /* Slight lift on hover for interaction */
+   }
+   
